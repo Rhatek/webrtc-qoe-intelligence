@@ -1,0 +1,3 @@
+Model,Mean fold MAE,Fold MAE standard deviation,Overall out-of-fold MAE
+Training-mean baseline,0.8773055555555554,0.19073898888983357,0.8773055555555556
+Linear regression,0.6711625018732019,0.07497750377091682,0.6711625018732019

@@ -1,0 +1,53 @@
+{
+  "model": "Ordinary least-squares LinearRegression",
+  "training_ratings": 300,
+  "network_conditions": 15,
+  "features": [
+    "Delay [ms]",
+    "Jitter [ms]",
+    "Packet Loss Rate [%]"
+  ],
+  "units": [
+    "milliseconds",
+    "milliseconds",
+    "percentage points (15 means 15%)"
+  ],
+  "coefficients": {
+    "Delay [ms]": -0.00032000000000000095,
+    "Jitter [ms]": -0.0007733333333333353,
+    "Packet Loss Rate [%]": -0.05000000000000007
+  },
+  "intercept": 3.9266666666666685,
+  "observed_input_values": {
+    "Delay [ms]": [
+      0,
+      500,
+      1000
+    ],
+    "Jitter [ms]": [
+      0,
+      500
+    ],
+    "Packet Loss Rate [%]": [
+      0,
+      15,
+      30
+    ]
+  },
+  "source_csv_sha256": "3c76704a0addc146e507ecddb5d0975503d8ff899493cc0c3456f15c198d301e",
+  "evaluation": {
+    "method": "Grouped 5-fold CV, shuffled with seed 42; groups are network-setting combinations",
+    "target": "Individual ratings",
+    "linear_mae": 0.6711625018732019,
+    "baseline_mae": 0.8773055555555556,
+    "note": "CV scores come from held-out fold models, not from scoring this final fit on training data."
+  },
+  "versions": {
+    "python": "3.14.7",
+    "scikit-learn": "1.9.0",
+    "pandas": "3.0.5",
+    "numpy": "2.5.2",
+    "joblib": "1.6.0"
+  },
+  "limitations": "15 conditions; same users across folds; no independent final test set; no personalized or causal claims; extrapolation unvalidated; predictions not clipped."
+}
